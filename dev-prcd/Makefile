@@ -6,6 +6,7 @@ DEPMOD:=$(shell which depmod)
 SYSMAP:= /boot/System.map-$(shell uname -r)
 
 default:
+	$(shell ./gen-header.sh)
 	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
 
 install:
