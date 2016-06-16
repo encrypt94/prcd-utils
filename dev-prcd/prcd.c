@@ -28,9 +28,7 @@ static ssize_t prcd_dev_read(struct file *filep, char *buffer, size_t len, loff_
   uint i;
   int  count;
   get_random_bytes(&i, sizeof(i));
-  printk(KERN_INFO "%i\n",i);
   i = i % N_BESTEMMIE;
-  printk(KERN_INFO "%i\n",i);
   count = strlen(bestemmie[i]);
 
   if (len < count)
